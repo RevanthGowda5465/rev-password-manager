@@ -1,6 +1,4 @@
-## 🧱 Project Architecture
-
-# Password Manager – Console Application
+# Rev Password Manager – Console Application
 
 Password Manager is a secure Java-based console application that helps users store and manage passwords for multiple online accounts.  
 It uses a master password for authentication and encrypts stored credentials before saving them to the database.
@@ -102,7 +100,13 @@ PasswordManager
 └── pom.xml
 ```
 ---
+![App Screenshot](./images/Architecture.png)
 
+---
+🗃️ ER Diagram (Database Design)
+![App Screenshot](./images/ER_Diagram.png)
+
+---
 ## 🛠️ Technologies Used
 
 - Java  
