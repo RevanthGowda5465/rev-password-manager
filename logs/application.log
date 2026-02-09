@@ -482,3 +482,51 @@ Caused by: oracle.jdbc.OracleDatabaseException: ORA-00001: unique constraint (RE
 2026-02-09 14:34:14 WARN  com.passwordmanager.dao.implementation.AccountCredentialsDaoImp - Failed to add account 'Gmail', already exists for userId=1
 2026-02-09 14:34:14 WARN  com.passwordmanager.dao.implementation.UserInfoDaoImp - Failed to create user 'tester', email 'tester@example.com' already exists
 2026-02-09 14:34:15 WARN  com.passwordmanager.dao.implementation.UserInfoDaoImp - Failed login attempt for username/email 'tester'
+2026-02-09 22:05:13 INFO  com.passwordmanager.dao.implementation.SecurityQuestionDaoImp - Fetched 12 security questions
+2026-02-09 22:05:52 INFO  com.passwordmanager.dao.implementation.SecurityQuestionDaoImp - Added security question with id=21 name=What is your mobile brand
+2026-02-09 22:05:55 INFO  com.passwordmanager.dao.implementation.UserInfoDaoImp - Created new user 'revanth' with email 'revanth@gmail.com'
+2026-02-09 22:05:55 INFO  com.passwordmanager.dao.implementation.UserInfoDaoImp - Fetched user details for email 'revanth@gmail.com'
+2026-02-09 22:05:56 INFO  com.passwordmanager.dao.implementation.SecurityAnswerDaoImp - Added security answer for userId=61 questionId=1
+2026-02-09 22:05:56 INFO  com.passwordmanager.dao.implementation.SecurityAnswerDaoImp - Added security answer for userId=61 questionId=21
+2026-02-09 22:06:07 INFO  com.passwordmanager.dao.implementation.UserInfoDaoImp - Fetched user details for username/email 'revanth'
+2026-02-09 22:06:21 INFO  com.passwordmanager.dao.implementation.AccountCredentialsDaoImp - Added account 'Gmail.com' for userId=61
+2026-02-09 22:06:31 INFO  com.passwordmanager.dao.implementation.AccountCredentialsDaoImp - Added account 'x.com' for userId=61
+2026-02-09 22:06:57 INFO  com.passwordmanager.dao.implementation.AccountCredentialsDaoImp - Added account 'amazon.in' for userId=61
+2026-02-09 22:07:37 INFO  com.passwordmanager.dao.implementation.UserInfoDaoImp - Fetched user details for userId=61
+2026-02-09 22:07:44 INFO  com.passwordmanager.dao.implementation.AccountCredentialsDaoImp - Updated account 'x.com' (accountId=141)
+2026-02-09 22:08:03 INFO  com.passwordmanager.dao.implementation.UserInfoDaoImp - Fetched user details for userId=61
+2026-02-09 22:08:37 INFO  com.passwordmanager.dao.implementation.SecurityAnswerDaoImp - Fetched 2 security answers for userId=61
+2026-02-09 22:08:37 INFO  com.passwordmanager.dao.implementation.SecurityQuestionDaoImp - Fetched security question id=1 name=What is your mother’s maiden name?
+2026-02-09 22:09:02 WARN  com.passwordmanager.dao.implementation.UserInfoDaoImp - Failed login attempt for username/email 'revanth'
+2026-02-09 22:09:10 INFO  com.passwordmanager.dao.implementation.UserInfoDaoImp - Fetched user details for username/email 'revanth'
+2026-02-09 22:09:14 INFO  com.passwordmanager.dao.implementation.SecurityAnswerDaoImp - Fetched 2 security answers for userId=61
+2026-02-09 22:09:14 INFO  com.passwordmanager.dao.implementation.SecurityQuestionDaoImp - Fetched security question id=1 name=What is your mother’s maiden name?
+2026-02-09 22:12:27 INFO  com.passwordmanager.dao.implementation.SecurityQuestionDaoImp - Fetched 12 security questions
+2026-02-09 22:12:44 INFO  com.passwordmanager.dao.implementation.SecurityQuestionDaoImp - Fetched 12 security questions
+2026-02-09 22:12:55 INFO  com.passwordmanager.dao.implementation.SecurityQuestionDaoImp - Fetched 12 security questions
+2026-02-09 22:13:00 INFO  com.passwordmanager.dao.implementation.UserInfoDaoImp - Created new user 'revanth' with email 'revanth@gmail.com'
+2026-02-09 22:13:00 INFO  com.passwordmanager.dao.implementation.UserInfoDaoImp - Fetched user details for email 'revanth@gmail.com'
+2026-02-09 22:13:00 INFO  com.passwordmanager.dao.implementation.SecurityAnswerDaoImp - Added security answer for userId=1 questionId=1
+2026-02-09 22:13:00 INFO  com.passwordmanager.dao.implementation.SecurityAnswerDaoImp - Added security answer for userId=1 questionId=12
+2026-02-09 22:13:12 INFO  com.passwordmanager.dao.implementation.UserInfoDaoImp - Fetched user details for username/email 'revanth'
+2026-02-09 22:13:19 INFO  com.passwordmanager.dao.implementation.SecurityAnswerDaoImp - Fetched 2 security answers for userId=1
+2026-02-09 22:13:19 INFO  com.passwordmanager.dao.implementation.SecurityQuestionDaoImp - Fetched security question id=1 name=What is your mother’s maiden name?
+2026-02-09 22:23:04 INFO  com.passwordmanager.dao.implementation.SecurityQuestionDaoImp - Fetched 12 security questions
+2026-02-09 22:23:12 INFO  com.passwordmanager.dao.implementation.SecurityQuestionDaoImp - Fetched 12 security questions
+2026-02-09 22:23:15 INFO  com.passwordmanager.dao.implementation.UserInfoDaoImp - Created new user 'revanh' with email 'revanth@gmail.com'
+2026-02-09 22:23:15 INFO  com.passwordmanager.dao.implementation.UserInfoDaoImp - Fetched user details for email 'revanth@gmail.com'
+2026-02-09 22:23:16 INFO  com.passwordmanager.dao.implementation.SecurityAnswerDaoImp - Added security answer for userId=1 questionId=1
+2026-02-09 22:23:16 INFO  com.passwordmanager.dao.implementation.SecurityAnswerDaoImp - Added security answer for userId=1 questionId=12
+2026-02-09 22:23:33 INFO  com.passwordmanager.dao.implementation.UserInfoDaoImp - Fetched user details for username/email 'revanh'
+2026-02-09 22:23:37 INFO  com.passwordmanager.dao.implementation.UserInfoDaoImp - Fetched user details for userId=1
+2026-02-09 22:23:42 INFO  com.passwordmanager.dao.implementation.UserInfoDaoImp - Updated user info for userId=1: new username='revanth', new email='revanth@gmail.com'
+2026-02-09 22:23:47 INFO  com.passwordmanager.dao.implementation.SecurityAnswerDaoImp - Fetched 2 security answers for userId=1
+2026-02-09 22:23:47 INFO  com.passwordmanager.dao.implementation.SecurityQuestionDaoImp - Fetched security question id=1 name=What is your mother’s maiden name?
+2026-02-09 22:23:47 INFO  com.passwordmanager.dao.implementation.SecurityQuestionDaoImp - Fetched security question id=12 name=What is your favorite color?
+2026-02-09 22:24:32 INFO  com.passwordmanager.dao.implementation.AccountCredentialsDaoImp - Added account 'Gmail' for userId=1
+2026-02-09 22:25:07 INFO  com.passwordmanager.dao.implementation.UserInfoDaoImp - Fetched user details for email 'revanth@gmail.com'
+2026-02-09 22:25:07 INFO  com.passwordmanager.dao.implementation.UserInfoDaoImp - Fetched user details for email 'revanth@gmail.com'
+2026-02-09 22:25:10 INFO  com.passwordmanager.dao.implementation.SecurityAnswerDaoImp - Fetched 2 security answers for userId=1
+2026-02-09 22:25:10 INFO  com.passwordmanager.dao.implementation.SecurityQuestionDaoImp - Fetched security question id=1 name=What is your mother’s maiden name?
+2026-02-09 22:25:14 INFO  com.passwordmanager.dao.implementation.SecurityQuestionDaoImp - Fetched security question id=12 name=What is your favorite color?
+2026-02-09 22:25:21 INFO  com.passwordmanager.dao.implementation.UserInfoDaoImp - Password updated successfully for userId=1

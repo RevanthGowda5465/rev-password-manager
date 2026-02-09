@@ -145,7 +145,6 @@ public class CreateAccount {
 
 			// Ask for answer to the selected question
 			System.out.println("Enter Answer:");
-
 			String ans = scan.nextLine().trim();
 
 			if (ans.isEmpty()) {
@@ -155,13 +154,13 @@ public class CreateAccount {
 			}
 
 			SecurityAnswer sa = new SecurityAnswer();
-
 			sa.setQuestionId(questionId);
 
-			// Answer is stored temporarily; DAO may encrypt later
-			sa.setSecurityAnswerHash(ans);
+			// ENCRYPT answer before storing
+			sa.setSecurityAnswerHash(SimpleCipherUtil.encrypt(ans));
 
 			answers.add(sa);
+
 		}
 
 		// Create user record first

@@ -6,20 +6,20 @@ import com.passwordmanager.dto.UserInfo;
 
 public class UserDetails {
 
-    // Displays basic profile details of the logged-in user
-    public static void getUserDetails(int userId) {
+	// Displays basic profile details of the logged-in user
+	public static void getUserDetails(int userId) {
 
-        UserInfoDao userDao = new UserInfoDaoImp(); // DAO for fetching user data
+		UserInfoDao userDao = new UserInfoDaoImp(); // DAO for fetching user data
 
-        UserInfo user = userDao.getUserById(userId); // Load user record
+		UserInfo user = userDao.getUserById(userId); // Load user record
 
-        if (user == null) {
-            System.out.println("User details not found."); // Stop if user does not exist
-            return;
-        }
+		if (user == null) {
+			System.out.println("User details not found."); // Stop if user does not exist
+			return;
+		}
 
-        System.out.println("\n--- USER PROFILE ---");
-        System.out.println("Username : " + user.getUserName());
-        System.out.println("Email    : " + user.getUserEmail());
-    }
+		System.out.println("\n--- USER PROFILE ---");
+		System.out.println("Username : " + user.getUserName());
+		System.out.println("Email    : " + user.getUserEmail());
+	}
 }

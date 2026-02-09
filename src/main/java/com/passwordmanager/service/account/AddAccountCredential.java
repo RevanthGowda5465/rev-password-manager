@@ -10,123 +10,123 @@ import com.passwordmanager.util.SimpleCipherUtil;
 
 public class AddAccountCredential {
 
-    // This method is used to add a new account for a given user
-    public static void addCredential(int userId) {
+	// This method is used to add a new account for a given user
+	public static void addCredential(int userId) {
 
-        // Scanner is used to read user input from the console
-        Scanner scan = new Scanner(System.in);
+		// Scanner is used to read user input from the console
+		Scanner scan = new Scanner(System.in);
 
-        // DAO object to perform database operations
-        AccountCredentialsDao accountDao = new AccountCredentialsDaoImp();
+		// DAO object to perform database operations
+		AccountCredentialsDao accountDao = new AccountCredentialsDaoImp();
 
-        // DTO object to store account details
-        AccountCredentials account = new AccountCredentials();
+		// DTO object to store account details
+		AccountCredentials account = new AccountCredentials();
 
-        // Set the logged-in user's id for this account
-        account.setUserId(userId);
+		// Set the logged-in user's id for this account
+		account.setUserId(userId);
 
-        String accountName;
+		String accountName;
 
-        // Keep asking until a valid account name is entered
-        while (true) {
+		// Keep asking until a valid account name is entered
+		while (true) {
 
-            System.out.println("Enter Account Name (e.g., Gmail, Facebook):");
-            accountName = scan.nextLine().trim();
+			System.out.println("Enter Account Name (e.g., Gmail, Facebook):");
+			accountName = scan.nextLine().trim();
 
-            if (!accountName.isEmpty()) {
-                break;
-            }
+			if (!accountName.isEmpty()) {
+				break;
+			}
 
-            System.out.println("Account name cannot be empty. Try again.");
-        }
+			System.out.println("Account name cannot be empty. Try again.");
+		}
 
-        // Save account name into DTO object
-        account.setAccountName(accountName);
+		// Save account name into DTO object
+		account.setAccountName(accountName);
 
-        String password = null;
+		String password = null;
 
-        // Loop to allow the user to choose how the password should be created
-        while (true) {
+		// Loop to allow the user to choose how the password should be created
+		while (true) {
 
-            System.out.println("\nChoose password option:");
-            System.out.println("1. Enter your own password");
-            System.out.println("2. Generate random password");
-            System.out.print("Enter choice: ");
+			System.out.println("\nChoose password option:");
+			System.out.println("1. Enter your own password");
+			System.out.println("2. Generate random password");
+			System.out.print("Enter choice: ");
 
-            String choice = scan.nextLine().trim();
+			String choice = scan.nextLine().trim();
 
-            switch (choice) {
+			switch (choice) {
 
-                case "1":
+			case "1":
 
-                    // User enters their own password
-                    while (true) {
-                        System.out.println("Enter Account Password:");
-                        password = scan.nextLine();
+				// User enters their own password
+				while (true) {
+					System.out.println("Enter Account Password:");
+					password = scan.nextLine();
 
-                        if (!password.trim().isEmpty()) {
-                            break;
-                        }
+					if (!password.trim().isEmpty()) {
+						break;
+					}
 
-                        System.out.println("Password cannot be empty.");
-                    }
-                    break;
+					System.out.println("Password cannot be empty.");
+				}
+				break;
 
-                case "2":
+			case "2":
 
-                    int length;
+				int length;
 
-                    // Ask for password length and validate the input
-                    while (true) {
-                        System.out.println("Enter desired password length:");
+				// Ask for password length and validate the input
+				while (true) {
+					System.out.println("Enter desired password length:");
 
-                        try {
-                            length = Integer.parseInt(scan.nextLine());
+					try {
+						length = Integer.parseInt(scan.nextLine());
 
-                            if (length < 6) {
-                                System.out.println("Password length must be at least 6.");
-                                continue;
-                            }
+						if (length < 6) {
+							System.out.println("Password length must be at least 6.");
+							continue;
+						}
 
-                            break;
+						break;
 
-                        } catch (NumberFormatException e) {
-                            System.out.println("Please enter a valid number.");
-                        }
-                    }
+					} catch (NumberFormatException e) {
+						System.out.println("Please enter a valid number.");
+					}
+				}
 
-                    // Generate a strong random password
-                    password = GeneratePassword.generatePassword(length, true, true, true, true);
+				// Generate a strong random password
+				password = GeneratePassword.generatePassword(length, true, true, true, true);
 
-                    System.out.println("Generated Password: " + password);
-                    break;
+				System.out.println("Generated Password: " + password);
+				break;
 
-                default:
-                    System.out.println("Invalid choice. Please select 1 or 2.");
-                    continue;
-            }
+			default:
+				System.out.println("Invalid choice. Please select 1 or 2.");
+				continue;
+			}
 
-            break;
-        }
+			break;
+		}
 
-        // Encrypt the password before storing it in the database
-        account.setAccountPasswordHash(SimpleCipherUtil.encrypt(password));
+		// Encrypt the password before storing it in the database
+		account.setAccountPasswordHash(SimpleCipherUtil.encrypt(password));
 
-        boolean success;
+		boolean success;
 
-        try {
-            // Save account details into database
-            success = accountDao.addAccount(account);
-        } catch (Exception e) {
-            System.out.println("Something went wrong while saving account.");
-            return;
-        }
+		try {
+			// Save account details into database
+			success = accountDao.addAccount(account);
+		} catch (Exception e) {
+			System.out.println("Something went wrong while saving account.");
+			return;
+		}
 
-        // Show result message to the user
-        if (success) {
-            System.out.println("Account credential added successfully!");
-        } else {
-            System.out.println("Failed to add credential. Account name might already exist.");
-        }
-    }
+		// Show result message to the user
+		if (success) {
+			System.out.println("Account credential added successfully!");
+		} else {
+			System.out.println("Failed to add credential. Account name might already exist.");
+		}
+	}
 }
