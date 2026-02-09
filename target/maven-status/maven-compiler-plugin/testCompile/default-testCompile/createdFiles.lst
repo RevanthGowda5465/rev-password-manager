@@ -1,0 +1,11 @@
+com\passwordmanager\service\questions\ManageSecurityQuestionsTest.class
+com\passwordmanager\service\account\UpdateAccountCredentialTest.class
+com\passwordmanager\service\account\ViewAccountDetailTest.class
+com\passwordmanager\service\questions\ForgotPasswordTest.class
+com\passwordmanager\service\user\LoginTest.class
+com\passwordmanager\service\user\AccountCredentialsDaoTest.class
+com\passwordmanager\service\account\AddAccountCredentialTest.class
+com\passwordmanager\service\account\DeleteAccountCredentialTest.class
+com\passwordmanager\service\password\GeneratePasswordTest.class
+com\passwordmanager\service\password\SimpleCipherUtilTest.class
+com\passwordmanager\service\user\CreateAccountTest.class
