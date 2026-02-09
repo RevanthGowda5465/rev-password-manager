@@ -103,7 +103,7 @@ Database (MySQL / Oracle via JDBC)
 ---
 
 ## 📂 Project Structure
-
+```
 PasswordManager
 │
 ├── src
@@ -142,7 +142,7 @@ PasswordManager
 │ └── service
 │ └── tests
 └── pom.xml
-
+```
 ---
 
 ## 🛠️ Technologies Used
