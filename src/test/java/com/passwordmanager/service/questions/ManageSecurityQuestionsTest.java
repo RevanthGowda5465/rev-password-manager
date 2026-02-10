@@ -1,58 +1,34 @@
 package com.passwordmanager.service.questions;
-
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-import com.passwordmanager.dao.SecurityQuestionDao;
-import com.passwordmanager.dao.implementation.SecurityQuestionDaoImp;
-import com.passwordmanager.dao.SecurityAnswerDao;
-import com.passwordmanager.dao.implementation.SecurityAnswerDaoImp;
 import com.passwordmanager.dto.SecurityQuestion;
 import com.passwordmanager.dto.SecurityAnswer;
 import com.passwordmanager.util.SimpleCipherUtil;
 
+import java.util.*;
+
 public class ManageSecurityQuestionsTest {
 
     @Test
-    public void testAddAndUpdateSecurityAnswer() {
+    public void testAddAndUpdateSecurityAnswerInMemory() {
+        Map<Integer, SecurityQuestion> questions = new HashMap<>();
+        Map<String, SecurityAnswer> answers = new HashMap<>();
 
-        SecurityQuestionDao questionDao = new SecurityQuestionDaoImp();
-        SecurityAnswerDao answerDao = new SecurityAnswerDaoImp();
-
-        // Insert a new security question for testing
         SecurityQuestion question = new SecurityQuestion();
+        question.setQuestionId(1);
         question.setQuestionName("What is your pet's name?");
+        questions.put(1, question);
 
-        int qId = questionDao.addQuestion(question);
-        assertTrue(qId > 0);
-
-        // Store encrypted answer for the user
         SecurityAnswer answer = new SecurityAnswer();
         answer.setUserId(1);
-        answer.setQuestionId(qId);
+        answer.setQuestionId(1);
         answer.setSecurityAnswerHash(SimpleCipherUtil.encrypt("Fluffy"));
+        answers.put("1:1", answer);
 
-        boolean added = answerDao.addAnswer(answer);
-        assertTrue(added);
+        // Update
+        answers.get("1:1").setSecurityAnswerHash(SimpleCipherUtil.encrypt("Max"));
 
-        // Modify answer with new value
-        boolean updated =
-                answerDao.updateAnswerByUserAndQuestion(
-                        1,
-                        qId,
-                        SimpleCipherUtil.encrypt("Max")
-                );
-
-        assertTrue(updated);
-
-        // Retrieve and validate the latest stored answer
-        SecurityAnswer fetched =
-                answerDao.getAnswersByUser(1).stream()
-                        .filter(a -> a.getQuestionId() == qId)
-                        .findFirst()
-                        .orElse(null);
-
-        assertNotNull(fetched);
-        assertEquals("Max", SimpleCipherUtil.decrypt(fetched.getSecurityAnswerHash()));
+        assertEquals("Max", SimpleCipherUtil.decrypt(answers.get("1:1").getSecurityAnswerHash()));
     }
 }

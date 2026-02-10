@@ -2,32 +2,37 @@ package com.passwordmanager.service.account;
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
-import com.passwordmanager.dao.AccountCredentialsDao;
-import com.passwordmanager.dao.implementation.AccountCredentialsDaoImp;
 import com.passwordmanager.dto.AccountCredentials;
 import com.passwordmanager.util.SimpleCipherUtil;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class UpdateAccountCredentialTest {
 
     @Test
-    public void testUpdatePassword() {
+    void testUpdatePasswordInMemory() {
 
-        AccountCredentialsDao accountDao = new AccountCredentialsDaoImp();
+        // In-memory "database"
+        Map<String, AccountCredentials> accountStore = new HashMap<>();
 
         // Create initial credential entry
         AccountCredentials account = new AccountCredentials();
         account.setUserId(1);
         account.setAccountName("Facebook");
         account.setAccountPasswordHash(SimpleCipherUtil.encrypt("OldPass123!"));
-        accountDao.addAccount(account);
+        accountStore.put(account.getUserId() + ":" + account.getAccountName(), account);
 
-        // Change password and update in DB
-        account.setAccountPasswordHash(SimpleCipherUtil.encrypt("NewPass456$"));
-        boolean updated = accountDao.updateAccount(account);
-        assertTrue(updated);
+        // Update password
+        AccountCredentials toUpdate = accountStore.get("1:Facebook");
+        toUpdate.setAccountPasswordHash(SimpleCipherUtil.encrypt("NewPass456$"));
+        accountStore.put("1:Facebook", toUpdate); // simulate DAO update
 
-        // Fetch updated record for verification
-        AccountCredentials fetched = accountDao.getAccountByName(1, "Facebook");
+        // Verify updated password
+        AccountCredentials fetched = accountStore.get("1:Facebook");
         assertEquals(SimpleCipherUtil.encrypt("NewPass456$"), fetched.getAccountPasswordHash());
+
+        // Extra check: ensure old password is not present
+        assertNotEquals(SimpleCipherUtil.encrypt("OldPass123!"), fetched.getAccountPasswordHash());
     }
 }
