@@ -31,7 +31,7 @@ public class ManageSecurityQuestions {
 			System.out.println("\n--- MANAGE SECURITY QUESTIONS ---");
 			System.out.println("1. View security question and answer");
 			System.out.println("2. Update existing question answers");
-			System.out.println("3. Replace a question with a new question");
+//			System.out.println("3. Replace a question with a new question");
 			System.out.println("0. Back to User Menu");
 			System.out.print("Enter your choice: ");
 

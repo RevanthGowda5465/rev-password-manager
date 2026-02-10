@@ -129,3 +129,147 @@ Caused by: oracle.jdbc.OracleDatabaseException: ORA-00001: unique constraint (RE
 
 	at oracle.jdbc.driver.T4CTTIoer11.processError(T4CTTIoer11.java:710) ~[ojdbc8-23.2.0.0.jar:23.2.0.0.0]
 	... 82 more
+2026-02-10 10:03:13 INFO  com.passwordmanager.dao.implementation.SecurityQuestionDaoImp - Fetched 12 security questions
+2026-02-10 10:03:48 INFO  com.passwordmanager.dao.implementation.SecurityQuestionDaoImp - Added security question with id=23 name=Whats i mmsd
+2026-02-10 10:03:50 INFO  com.passwordmanager.dao.implementation.UserInfoDaoImp - Created new user 'prashanth' with email 'prashanth@gmail.om'
+2026-02-10 10:03:50 INFO  com.passwordmanager.dao.implementation.UserInfoDaoImp - Fetched user details for email 'prashanth@gmail.om'
+2026-02-10 10:03:50 INFO  com.passwordmanager.dao.implementation.SecurityAnswerDaoImp - Added security answer for userId=24 questionId=1
+2026-02-10 10:03:51 INFO  com.passwordmanager.dao.implementation.SecurityAnswerDaoImp - Added security answer for userId=24 questionId=23
+2026-02-10 10:04:15 INFO  com.passwordmanager.dao.implementation.UserInfoDaoImp - Fetched user details for username/email 'prashanth@gmail.om'
+2026-02-10 10:04:22 INFO  com.passwordmanager.dao.implementation.AccountCredentialsDaoImp - Added account 'gmail' for userId=24
+2026-02-10 10:04:37 INFO  com.passwordmanager.dao.implementation.UserInfoDaoImp - Fetched user details for userId=24
+2026-02-10 10:04:37 WARN  com.passwordmanager.dao.implementation.UserInfoDaoImp - Failed login attempt for email='prashanth@gmail.om'
+2026-02-10 10:06:07 INFO  com.passwordmanager.dao.implementation.UserInfoDaoImp - Fetched user details for userId=24
+2026-02-10 10:06:11 INFO  com.passwordmanager.dao.implementation.AccountCredentialsDaoImp - Updated account 'gmail' (accountId=125)
+2026-02-10 10:08:03 INFO  com.passwordmanager.dao.implementation.UserInfoDaoImp - Fetched user details for userId=24
+2026-02-10 10:08:04 INFO  com.passwordmanager.dao.implementation.AccountCredentialsDaoImp - Deleted account 'gmail' for userId=24
+2026-02-10 10:08:37 INFO  com.passwordmanager.dao.implementation.UserInfoDaoImp - Fetched user details for userId=24
+2026-02-10 10:08:47 INFO  com.passwordmanager.dao.implementation.SecurityAnswerDaoImp - Fetched 2 security answers for userId=24
+2026-02-10 10:08:47 INFO  com.passwordmanager.dao.implementation.SecurityQuestionDaoImp - Fetched security question id=1 name=What is your mother’s maiden name?
+2026-02-10 10:08:48 INFO  com.passwordmanager.dao.implementation.SecurityQuestionDaoImp - Fetched security question id=23 name=Whats i mmsd
+2026-02-10 10:08:53 INFO  com.passwordmanager.dao.implementation.SecurityQuestionDaoImp - Fetched 2 security questions for userId=24
+2026-02-10 10:13:30 INFO  com.passwordmanager.dao.implementation.SecurityAnswerDaoImp - Updated security answer by userId=24 questionId=1
+2026-02-10 10:13:45 INFO  com.passwordmanager.dao.implementation.SecurityQuestionDaoImp - Fetched 2 security questions for userId=24
+2026-02-10 10:13:50 INFO  com.passwordmanager.dao.implementation.SecurityAnswerDaoImp - Updated security answer by userId=24 questionId=23
+2026-02-10 10:13:54 INFO  com.passwordmanager.dao.implementation.SecurityAnswerDaoImp - Fetched 2 security answers for userId=24
+2026-02-10 10:13:54 INFO  com.passwordmanager.dao.implementation.SecurityQuestionDaoImp - Fetched security question id=1 name=What is your mother’s maiden name?
+2026-02-10 10:13:54 INFO  com.passwordmanager.dao.implementation.SecurityQuestionDaoImp - Fetched security question id=23 name=Whats i mmsd
+2026-02-10 10:13:56 INFO  com.passwordmanager.dao.implementation.SecurityQuestionDaoImp - Fetched 12 security questions
+2026-02-10 10:14:07 ERROR com.passwordmanager.dao.implementation.SecurityAnswerDaoImp - DB error while deleting security answer for userId=24 questionId=1
+java.sql.SQLException: ORA-17041: Missing IN or OUT parameter at index: 1
+	at oracle.jdbc.driver.OraclePreparedStatement.processCompletedBindRow(OraclePreparedStatement.java:1993) ~[ojdbc8-23.2.0.0.jar:23.2.0.0.0]
+	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3718) ~[ojdbc8-23.2.0.0.jar:23.2.0.0.0]
+	at oracle.jdbc.driver.OraclePreparedStatement.executeLargeUpdate(OraclePreparedStatement.java:3905) ~[ojdbc8-23.2.0.0.jar:23.2.0.0.0]
+	at oracle.jdbc.driver.OraclePreparedStatement.executeUpdate(OraclePreparedStatement.java:3880) ~[ojdbc8-23.2.0.0.jar:23.2.0.0.0]
+	at oracle.jdbc.driver.OraclePreparedStatementWrapper.executeUpdate(OraclePreparedStatementWrapper.java:993) ~[ojdbc8-23.2.0.0.jar:23.2.0.0.0]
+	at com.passwordmanager.dao.implementation.SecurityAnswerDaoImp.deleteAnswer(SecurityAnswerDaoImp.java:152) [classes/:?]
+	at com.passwordmanager.service.questions.ManageSecurityQuestions.replaceSecurityQuestion(ManageSecurityQuestions.java:160) [classes/:?]
+	at com.passwordmanager.service.questions.ManageSecurityQuestions.manage(ManageSecurityQuestions.java:50) [classes/:?]
+	at com.passwordmanager.service.user.UserMenu.getMenu(UserMenu.java:85) [classes/:?]
+	at com.passwordmanager.app.Main.main(Main.java:40) [classes/:?]
+2026-02-10 10:17:31 INFO  com.passwordmanager.dao.implementation.UserInfoDaoImp - Fetched user details for username/email 'revanth@gmail.com'
+2026-02-10 10:18:06 INFO  com.passwordmanager.dao.implementation.UserInfoDaoImp - Fetched user details for userId=1
+2026-02-10 10:18:09 INFO  com.passwordmanager.dao.implementation.AccountCredentialsDaoImp - Updated account 'Gmail' (accountId=100)
+2026-02-10 10:18:15 INFO  com.passwordmanager.dao.implementation.UserInfoDaoImp - Fetched user details for userId=1
+2026-02-10 10:18:15 WARN  com.passwordmanager.dao.implementation.AccountCredentialsDaoImp - Attempted to delete non-existing account 'gmail' for userId=1
+2026-02-10 10:18:35 INFO  com.passwordmanager.dao.implementation.UserInfoDaoImp - Fetched user details for userId=1
+2026-02-10 10:18:35 WARN  com.passwordmanager.dao.implementation.AccountCredentialsDaoImp - Attempted to delete non-existing account 'gmail' for userId=1
+2026-02-10 10:18:58 INFO  com.passwordmanager.dao.implementation.UserInfoDaoImp - Fetched user details for userId=1
+2026-02-10 10:18:58 INFO  com.passwordmanager.dao.implementation.AccountCredentialsDaoImp - Deleted account 'Gmail' for userId=1
+2026-02-10 10:20:27 INFO  com.passwordmanager.dao.implementation.UserInfoDaoImp - Fetched user details for userId=1
+2026-02-10 10:20:55 INFO  com.passwordmanager.dao.implementation.SecurityAnswerDaoImp - Fetched 3 security answers for userId=1
+2026-02-10 10:20:55 INFO  com.passwordmanager.dao.implementation.SecurityQuestionDaoImp - Fetched security question id=1 name=What is your mother’s maiden name?
+2026-02-10 10:20:55 INFO  com.passwordmanager.dao.implementation.SecurityQuestionDaoImp - Fetched security question id=12 name=What is your favorite color?
+2026-02-10 10:20:55 INFO  com.passwordmanager.dao.implementation.SecurityQuestionDaoImp - Fetched security question id=21 name=What is your pet's name?
+2026-02-10 10:21:00 INFO  com.passwordmanager.dao.implementation.SecurityQuestionDaoImp - Fetched 12 security questions
+2026-02-10 10:21:12 ERROR com.passwordmanager.dao.implementation.SecurityAnswerDaoImp - DB error while deleting security answer for userId=1 questionId=1
+java.sql.SQLException: ORA-17041: Missing IN or OUT parameter at index: 1
+	at oracle.jdbc.driver.OraclePreparedStatement.processCompletedBindRow(OraclePreparedStatement.java:1993) ~[ojdbc8-23.2.0.0.jar:23.2.0.0.0]
+	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3718) ~[ojdbc8-23.2.0.0.jar:23.2.0.0.0]
+	at oracle.jdbc.driver.OraclePreparedStatement.executeLargeUpdate(OraclePreparedStatement.java:3905) ~[ojdbc8-23.2.0.0.jar:23.2.0.0.0]
+	at oracle.jdbc.driver.OraclePreparedStatement.executeUpdate(OraclePreparedStatement.java:3880) ~[ojdbc8-23.2.0.0.jar:23.2.0.0.0]
+	at oracle.jdbc.driver.OraclePreparedStatementWrapper.executeUpdate(OraclePreparedStatementWrapper.java:993) ~[ojdbc8-23.2.0.0.jar:23.2.0.0.0]
+	at com.passwordmanager.dao.implementation.SecurityAnswerDaoImp.deleteAnswer(SecurityAnswerDaoImp.java:152) [classes/:?]
+	at com.passwordmanager.service.questions.ManageSecurityQuestions.replaceSecurityQuestion(ManageSecurityQuestions.java:160) [classes/:?]
+	at com.passwordmanager.service.questions.ManageSecurityQuestions.manage(ManageSecurityQuestions.java:50) [classes/:?]
+	at com.passwordmanager.service.user.UserMenu.getMenu(UserMenu.java:85) [classes/:?]
+	at com.passwordmanager.app.Main.main(Main.java:40) [classes/:?]
+2026-02-10 10:40:36 INFO  com.passwordmanager.dao.implementation.UserInfoDaoImp - Fetched user details for username/email 'revanth@gmail.com'
+2026-02-10 10:40:51 WARN  com.passwordmanager.dao.implementation.UserInfoDaoImp - Failed login attempt by userId=1
+2026-02-10 10:40:58 WARN  com.passwordmanager.dao.implementation.UserInfoDaoImp - Failed login attempt by userId=1
+2026-02-10 10:41:03 WARN  com.passwordmanager.dao.implementation.UserInfoDaoImp - Failed login attempt by userId=1
+2026-02-10 10:41:17 WARN  com.passwordmanager.dao.implementation.UserInfoDaoImp - Failed login attempt for username/email 'revanth@5465'
+2026-02-10 10:41:44 INFO  com.passwordmanager.dao.implementation.UserInfoDaoImp - Fetched user details for username/email 'revanth@gmail.com'
+2026-02-10 10:42:00 INFO  com.passwordmanager.dao.implementation.SecurityQuestionDaoImp - Fetched 3 security questions for userId=1
+2026-02-10 10:42:18 INFO  com.passwordmanager.dao.implementation.SecurityAnswerDaoImp - Updated security answer by userId=1 questionId=1
+2026-02-10 10:42:22 INFO  com.passwordmanager.dao.implementation.SecurityAnswerDaoImp - Fetched 3 security answers for userId=1
+2026-02-10 10:42:22 INFO  com.passwordmanager.dao.implementation.SecurityQuestionDaoImp - Fetched security question id=1 name=What is your mother’s maiden name?
+2026-02-10 10:42:22 INFO  com.passwordmanager.dao.implementation.SecurityQuestionDaoImp - Fetched security question id=12 name=What is your favorite color?
+2026-02-10 10:42:22 INFO  com.passwordmanager.dao.implementation.SecurityQuestionDaoImp - Fetched security question id=21 name=What is your pet's name?
+2026-02-10 10:43:52 INFO  com.passwordmanager.dao.implementation.SecurityQuestionDaoImp - Fetched 12 security questions
+2026-02-10 10:44:17 INFO  com.passwordmanager.dao.implementation.SecurityQuestionDaoImp - Added security question with id=13 name=What is my nickname?
+2026-02-10 10:44:59 INFO  com.passwordmanager.dao.implementation.UserInfoDaoImp - Created new user 'shiva' with email 'shiva@gmail.com'
+2026-02-10 10:44:59 INFO  com.passwordmanager.dao.implementation.UserInfoDaoImp - Fetched user details for email 'shiva@gmail.com'
+2026-02-10 10:44:59 INFO  com.passwordmanager.dao.implementation.SecurityAnswerDaoImp - Added security answer for userId=1 questionId=3
+2026-02-10 10:44:59 INFO  com.passwordmanager.dao.implementation.SecurityAnswerDaoImp - Added security answer for userId=1 questionId=13
+2026-02-10 10:45:08 INFO  com.passwordmanager.dao.implementation.UserInfoDaoImp - Fetched user details for username/email 'shiva'
+2026-02-10 10:45:23 INFO  com.passwordmanager.dao.implementation.AccountCredentialsDaoImp - Added account 'gmail' for userId=1
+2026-02-10 10:45:44 INFO  com.passwordmanager.dao.implementation.AccountCredentialsDaoImp - Added account 'twitter' for userId=1
+2026-02-10 11:57:34 INFO  com.passwordmanager.dao.implementation.UserInfoDaoImp - Fetched user details for username/email 'shiva@gmail.com'
+2026-02-10 11:57:44 INFO  com.passwordmanager.dao.implementation.SecurityAnswerDaoImp - Fetched 2 security answers for userId=1
+2026-02-10 11:57:44 INFO  com.passwordmanager.dao.implementation.SecurityQuestionDaoImp - Fetched security question id=3 name=What is your date of birth?
+2026-02-10 11:57:44 INFO  com.passwordmanager.dao.implementation.SecurityQuestionDaoImp - Fetched security question id=13 name=What is my nickname?
+2026-02-10 14:16:05 INFO  com.passwordmanager.dao.implementation.AccountCredentialsDaoImp - Added account 'Gmail' for userId=1
+2026-02-10 14:16:07 INFO  com.passwordmanager.dao.implementation.AccountCredentialsDaoImp - Added account 'TestDelete' for userId=1
+2026-02-10 14:16:09 INFO  com.passwordmanager.dao.implementation.AccountCredentialsDaoImp - Deleted account 'TestDelete' for userId=1
+2026-02-10 14:16:09 INFO  com.passwordmanager.dao.implementation.AccountCredentialsDaoImp - Added account 'ViewTest' for userId=1
+2026-02-10 14:16:09 INFO  com.passwordmanager.dao.implementation.UserInfoDaoImp - Created new user 'forgotTest' with email 'forgot@example.com'
+2026-02-10 14:16:09 INFO  com.passwordmanager.dao.implementation.UserInfoDaoImp - Fetched user details for email 'forgot@example.com'
+2026-02-10 14:16:09 INFO  com.passwordmanager.dao.implementation.UserInfoDaoImp - Password updated successfully for userId=2
+2026-02-10 14:16:09 INFO  com.passwordmanager.dao.implementation.UserInfoDaoImp - Created new user 'tester' with email 'tester@example.com'
+2026-02-10 14:16:10 WARN  com.passwordmanager.dao.implementation.UserInfoDaoImp - Failed login attempt for username/email 'tester'
+2026-02-10 14:20:28 WARN  com.passwordmanager.dao.implementation.AccountCredentialsDaoImp - Failed to add account 'Gmail', already exists for userId=1
+2026-02-10 14:20:29 INFO  com.passwordmanager.dao.implementation.AccountCredentialsDaoImp - Added account 'TestDelete' for userId=1
+2026-02-10 14:20:29 INFO  com.passwordmanager.dao.implementation.AccountCredentialsDaoImp - Deleted account 'TestDelete' for userId=1
+2026-02-10 14:20:29 WARN  com.passwordmanager.dao.implementation.AccountCredentialsDaoImp - Failed to add account 'ViewTest', already exists for userId=1
+2026-02-10 14:20:29 WARN  com.passwordmanager.dao.implementation.UserInfoDaoImp - Failed to create user 'forgotTest', email 'forgot@example.com' already exists
+2026-02-10 14:20:29 INFO  com.passwordmanager.dao.implementation.UserInfoDaoImp - Fetched user details for email 'forgot@example.com'
+2026-02-10 14:20:30 INFO  com.passwordmanager.dao.implementation.UserInfoDaoImp - Password updated successfully for userId=2
+2026-02-10 14:20:30 WARN  com.passwordmanager.dao.implementation.UserInfoDaoImp - Failed to create user 'tester', email 'tester@example.com' already exists
+2026-02-10 14:20:30 WARN  com.passwordmanager.dao.implementation.UserInfoDaoImp - Failed login attempt for username/email 'tester'
+2026-02-10 14:21:05 WARN  com.passwordmanager.dao.implementation.AccountCredentialsDaoImp - Failed to add account 'Gmail', already exists for userId=1
+2026-02-10 14:21:05 INFO  com.passwordmanager.dao.implementation.AccountCredentialsDaoImp - Added account 'TestDelete' for userId=1
+2026-02-10 14:21:05 INFO  com.passwordmanager.dao.implementation.AccountCredentialsDaoImp - Deleted account 'TestDelete' for userId=1
+2026-02-10 14:21:05 WARN  com.passwordmanager.dao.implementation.AccountCredentialsDaoImp - Failed to add account 'ViewTest', already exists for userId=1
+2026-02-10 14:21:05 WARN  com.passwordmanager.dao.implementation.UserInfoDaoImp - Failed to create user 'forgotTest', email 'forgot@example.com' already exists
+2026-02-10 14:21:05 INFO  com.passwordmanager.dao.implementation.UserInfoDaoImp - Fetched user details for email 'forgot@example.com'
+2026-02-10 14:21:06 INFO  com.passwordmanager.dao.implementation.UserInfoDaoImp - Password updated successfully for userId=2
+2026-02-10 14:21:06 WARN  com.passwordmanager.dao.implementation.UserInfoDaoImp - Failed to create user 'tester', email 'tester@example.com' already exists
+2026-02-10 14:21:06 WARN  com.passwordmanager.dao.implementation.UserInfoDaoImp - Failed login attempt for username/email 'tester'
+2026-02-10 14:21:32 WARN  com.passwordmanager.dao.implementation.AccountCredentialsDaoImp - Failed to add account 'Gmail', already exists for userId=1
+2026-02-10 14:21:32 INFO  com.passwordmanager.dao.implementation.AccountCredentialsDaoImp - Added account 'TestDelete' for userId=1
+2026-02-10 14:21:33 INFO  com.passwordmanager.dao.implementation.AccountCredentialsDaoImp - Deleted account 'TestDelete' for userId=1
+2026-02-10 14:21:33 WARN  com.passwordmanager.dao.implementation.AccountCredentialsDaoImp - Failed to add account 'ViewTest', already exists for userId=1
+2026-02-10 14:21:33 WARN  com.passwordmanager.dao.implementation.UserInfoDaoImp - Failed to create user 'forgotTest', email 'forgot@example.com' already exists
+2026-02-10 14:21:34 INFO  com.passwordmanager.dao.implementation.UserInfoDaoImp - Fetched user details for email 'forgot@example.com'
+2026-02-10 14:21:34 INFO  com.passwordmanager.dao.implementation.UserInfoDaoImp - Password updated successfully for userId=2
+2026-02-10 14:21:34 WARN  com.passwordmanager.dao.implementation.UserInfoDaoImp - Failed to create user 'tester', email 'tester@example.com' already exists
+2026-02-10 14:21:34 WARN  com.passwordmanager.dao.implementation.UserInfoDaoImp - Failed login attempt for username/email 'tester'
+2026-02-10 14:22:44 WARN  com.passwordmanager.dao.implementation.AccountCredentialsDaoImp - Failed to add account 'Gmail', already exists for userId=1
+2026-02-10 14:22:44 INFO  com.passwordmanager.dao.implementation.AccountCredentialsDaoImp - Added account 'TestDelete' for userId=1
+2026-02-10 14:22:45 INFO  com.passwordmanager.dao.implementation.AccountCredentialsDaoImp - Deleted account 'TestDelete' for userId=1
+2026-02-10 14:22:46 WARN  com.passwordmanager.dao.implementation.AccountCredentialsDaoImp - Failed to add account 'ViewTest', already exists for userId=1
+2026-02-10 14:22:46 WARN  com.passwordmanager.dao.implementation.UserInfoDaoImp - Failed to create user 'forgotTest', email 'forgot@example.com' already exists
+2026-02-10 14:22:46 INFO  com.passwordmanager.dao.implementation.UserInfoDaoImp - Fetched user details for email 'forgot@example.com'
+2026-02-10 14:22:46 INFO  com.passwordmanager.dao.implementation.UserInfoDaoImp - Password updated successfully for userId=2
+2026-02-10 14:22:46 WARN  com.passwordmanager.dao.implementation.UserInfoDaoImp - Failed to create user 'tester', email 'tester@example.com' already exists
+2026-02-10 14:22:46 WARN  com.passwordmanager.dao.implementation.UserInfoDaoImp - Failed login attempt for username/email 'tester'
+2026-02-10 14:23:15 WARN  com.passwordmanager.dao.implementation.AccountCredentialsDaoImp - Failed to add account 'Gmail', already exists for userId=1
+2026-02-10 14:23:15 INFO  com.passwordmanager.dao.implementation.AccountCredentialsDaoImp - Added account 'TestDelete' for userId=1
+2026-02-10 14:23:16 INFO  com.passwordmanager.dao.implementation.AccountCredentialsDaoImp - Deleted account 'TestDelete' for userId=1
+2026-02-10 14:23:16 WARN  com.passwordmanager.dao.implementation.AccountCredentialsDaoImp - Failed to add account 'ViewTest', already exists for userId=1
+2026-02-10 14:23:16 WARN  com.passwordmanager.dao.implementation.UserInfoDaoImp - Failed to create user 'forgotTest', email 'forgot@example.com' already exists
+2026-02-10 14:23:16 INFO  com.passwordmanager.dao.implementation.UserInfoDaoImp - Fetched user details for email 'forgot@example.com'
+2026-02-10 14:23:16 INFO  com.passwordmanager.dao.implementation.UserInfoDaoImp - Password updated successfully for userId=2
+2026-02-10 14:23:16 WARN  com.passwordmanager.dao.implementation.UserInfoDaoImp - Failed to create user 'tester', email 'tester@example.com' already exists
+2026-02-10 14:23:16 WARN  com.passwordmanager.dao.implementation.UserInfoDaoImp - Failed login attempt for username/email 'tester'

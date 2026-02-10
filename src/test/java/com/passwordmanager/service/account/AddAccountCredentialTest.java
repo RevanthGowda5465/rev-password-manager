@@ -3,6 +3,10 @@ package com.passwordmanager.service.account;
 import com.passwordmanager.dao.implementation.AccountCredentialsDaoImp;
 import com.passwordmanager.dto.AccountCredentials;
 import com.passwordmanager.util.SimpleCipherUtil;
+
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import org.junit.jupiter.api.Test;
 
 public class AddAccountCredentialTest {
@@ -23,11 +27,6 @@ public class AddAccountCredentialTest {
         AccountCredentialsDaoImp dao = new AccountCredentialsDaoImp();
 
         boolean success = dao.addAccount(account);   // performs actual insert
-
-        if (success) {
-            System.out.println("Test: Account inserted correctly!");
-        } else {
-            System.out.println("Test: Insert failed (record may already exist).");
-        }
+        assertEquals(success, false);
     }
 }
