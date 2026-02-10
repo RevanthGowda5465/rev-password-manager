@@ -60,50 +60,79 @@ Database (MySQL / Oracle via JDBC)
 
 ## 📂 Project Structure
 ```
-PasswordManager
-│
-├── src
-│ ├── main
-│ │ ├── java
-│ │ │ └── com.passwordmanager
-│ │ │ ├── dao
-│ │ │ │ ├── impl
-│ │ │ │ │ ├── AccountCredentialDaoImp.java
-│ │ │ │ │ ├── UserInfoDaoImp.java
-│ │ │ │ │ ├── SecurityAnswerDaoImp.java
-│ │ │ │ │ └── SecurityQuestionDaoImp.java
-│ │ │ │ ├── AccountCredentialDao.java
-│ │ │ │ ├── UserInfoDao.java
-│ │ │ │ ├── SecurityAnswerDao.java
-│ │ │ │ └── SecurityQuestionDao.java
-│ │ │ ├── dto
-│ │ │ │ ├── AccountCredential.java
-│ │ │ │ ├── UserInfo.java
-│ │ │ │ ├── SecurityAnswer.java
-│ │ │ │ └── SecurityQuestion.java
-│ │ │ ├── service
-│ │ │ │ ├── account
-│ │ │ │ ├── user
-│ │ │ │ ├── password
-│ │ │ │ └── security
-│ │ │ └── util
-│ │ │ ├── ConnectorFactory.java
-│ │ │ ├── SimpleCipherUtil.java
-│ │ │ └── LoggerFactory.java
-│ │ └── resources
-│ │ └── log4j2.xml
-│ └── test
-│ └── java
-│ └── com.passwordmanager
-│ └── service
-│ └── tests
-└── pom.xml
+RevPasswordManager/
+├── pom.xml
+├── src/
+│   ├── main/
+│   │   ├── java/
+│   │   │   ├── com/passwordmanager/
+│   │   │   │   ├── app/
+│   │   │   │   │   └── App.java
+│   │   │   │   ├── connection/
+│   │   │   │   │   └── ConnectorFactory.java
+│   │   │   │   ├── dao/
+│   │   │   │   │   ├── AccountCredentialsDao.java
+│   │   │   │   │   ├── SecurityAnswerDao.java
+│   │   │   │   │   ├── SecurityQuestionDao.java
+│   │   │   │   │   ├── UserInfoDao.java
+│   │   │   │   │   └── implementation/
+│   │   │   │   │       ├── AccountCredentialsDaoImp.java
+│   │   │   │   │       ├── SecurityAnswerDaoImp.java
+│   │   │   │   │       ├── SecurityQuestionDaoImp.java
+│   │   │   │   │       └── UserInfoDaoImp.java
+│   │   │   │   ├── dto/
+│   │   │   │   │   ├── AccountCredentials.java
+│   │   │   │   │   ├── SecurityAnswer.java
+│   │   │   │   │   ├── SecurityQuestion.java
+│   │   │   │   │   └── UserInfo.java
+│   │   │   │   ├── service/
+│   │   │   │   │   ├── account/
+│   │   │   │   │   │   ├── AddAccountCredential.java
+│   │   │   │   │   │   ├── DeleteAccountCredential.java
+│   │   │   │   │   │   ├── UpdateAccountCredential.java
+│   │   │   │   │   │   └── ViewAccountDetail.java
+│   │   │   │   │   ├── login/
+│   │   │   │   │   │   ├── LoginService.java
+│   │   │   │   │   │   └── LogoutService.java
+│   │   │   │   │   ├── password/
+│   │   │   │   │   │   ├── GeneratePassword.java
+│   │   │   │   │   │   └── PasswordService.java
+│   │   │   │   │   ├── questions/
+│   │   │   │   │   │   ├── ManageSecurityQuestions.java
+│   │   │   │   │   │   └── SecurityQuestionService.java
+│   │   │   │   │   └── user/
+│   │   │   │   │       ├── UserService.java
+│   │   │   │   │       └── UserProfileService.java
+│   │   │   │   └── util/
+│   │   │   │       ├── LoggerFactory.java
+│   │   │   │       └── SimpleCipherUtil.java
+│   └── test/
+│       └── java/
+│           └── com/passwordmanager/service/
+│               ├── account/
+│               │   ├── AddAccountCredentialTest.java
+│               │   ├── DeleteAccountCredentialTest.java
+│               │   ├── UpdateAccountCredentialTest.java
+│               │   └── ViewAccountDetailTest.java
+│               ├── login/
+│               │   ├── LoginServiceTest.java
+│               │   └── LogoutServiceTest.java
+│               ├── password/
+│               │   ├── GeneratePasswordTest.java
+│               │   └── PasswordServiceTest.java
+│               ├── questions/
+│               │   ├── ManageSecurityQuestionsTest.java
+│               │   └── SecurityQuestionServiceTest.java
+│               └── user/
+│                   ├── UserServiceTest.java
+│                   └── UserProfileServiceTest.java
+
 ```
 ---
 ![App Screenshot](./images/Architecture.png)
 
 ---
-🗃️ ER Diagram (Database Design)
+## 🗃️ ER Diagram (Database Design)
 ![App Screenshot](./images/ER_Diagram.png)
 
 ---
